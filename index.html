@@ -8,28 +8,42 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
-      <a class="brand" href="#" aria-label="Hamza Dashboard home">
+      <a class="brand" href="#overview" aria-label="Hamza Dashboard home">
         <span class="brand-mark">H</span>
         <span><strong>Hamza<span class="brand-dot">.</span></strong><small>PERSONAL SPACE</small></span>
       </a>
+      <div class="side-label">WORKSPACE</div>
       <nav class="nav-list" aria-label="Main navigation">
         <button class="nav-link active" data-target="overview"><span>▦</span> Overview</button>
         <button class="nav-link" data-target="notes-section"><span>▤</span> My Notes</button>
         <button class="nav-link" data-target="tasks-section"><span>✓</span> To-do List</button>
         <button class="nav-link" data-target="calculator-section"><span>⌗</span> Calculator</button>
       </nav>
+      <div class="sidebar-card">
+        <span class="sidebar-card-icon">✦</span>
+        <strong>Make today count.</strong>
+        <p>Small steps lead to big progress.</p>
+      </div>
       <div class="sidebar-bottom">
-        <div class="mini-profile"><div class="avatar">H</div><div><strong>Hamza</strong><small>Dashboard owner</small></div></div>
+        <div class="mini-profile">
+          <div class="avatar">H</div>
+          <div><strong>Hamza Jafar</strong><small>Dashboard owner</small></div>
+          <span class="online-dot"></span>
+        </div>
         <p>Made with <span class="heart">♥</span> by Hamza</p>
       </div>
     </aside>
 
     <main class="main-content">
       <header class="topbar">
-        <button class="menu-toggle icon-button" id="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="topbar-left">
+          <button class="menu-toggle icon-button" id="menu-toggle" aria-label="Toggle navigation">☰</button>
+          <div class="breadcrumb">Workspace <span>/</span> <strong id="current-section">Overview</strong></div>
+        </div>
         <div class="top-actions">
           <div class="clock-wrap"><span class="clock-icon">◷</span><div><strong id="clock">--:--:--</strong><small id="today-date">Loading date...</small></div></div>
           <button class="icon-button theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme" title="Toggle theme">☼</button>
@@ -39,34 +53,34 @@
       <section class="welcome-panel" id="overview">
         <div class="welcome-copy">
           <span class="eyebrow"><span class="status-dot"></span> YOUR SPACE, YOUR PACE</span>
-          <h1>Welcome back, <span>Hamza.</span></h1>
+          <h1>Welcome back,<br><span>Hamza.</span></h1>
           <p>A clearer mind starts with a little organization. What will you make today?</p>
-          <a href="#tasks-section" class="primary-button">View my tasks <span>↗</span></a>
+          <button class="primary-button" id="view-tasks">View my tasks <span>↗</span></button>
+          <div class="welcome-meta"><span>✦ A fresh start</span><span>•</span><span id="welcome-date">Your personal workspace</span></div>
         </div>
         <div class="welcome-art" aria-hidden="true">
-          <div class="orb orb-one"></div><div class="orb orb-two"></div>
-          <div class="art-card"><span>✦</span><strong>Small steps.</strong><strong>Big progress.</strong><small>Keep moving forward</small></div>
-          <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="art-card"><span class="art-star">✦</span><small>YOUR DAILY REMINDER</small><strong>Small steps.</strong><strong>Big progress.</strong><p>Keep moving forward</p><div class="art-progress"><span></span></div></div>
+          <div class="floating-chip chip-one">✧ Stay focused</div><div class="floating-chip chip-two">✓ You got this</div>
         </div>
       </section>
 
-      <section class="search-row" aria-label="Quick search">
-        <div class="section-heading"><div><span class="eyebrow">YOUR WORKSPACE</span><h2>Dashboard overview</h2></div></div>
+      <section class="search-row">
+        <div class="section-heading"><div><span class="eyebrow">YOUR WORKSPACE</span><h2>Dashboard overview</h2></div><span class="today-chip"><span class="status-dot"></span> All systems ready</span></div>
         <form id="search-form" class="search-box">
-          <span>⌕</span><input id="global-search" type="search" placeholder="Search notes and tasks..." aria-label="Search notes and tasks">
-          <kbd>Enter</kbd>
+          <span class="search-symbol">⌕</span><input id="global-search" type="search" placeholder="Search your notes and tasks..." aria-label="Search notes and tasks"><kbd>ENTER</kbd>
         </form>
       </section>
 
       <section class="stats-grid" aria-label="Dashboard statistics">
-        <article class="stat-card stat-purple"><div class="stat-top"><span class="stat-icon">▤</span><span class="stat-label">TOTAL NOTES</span></div><strong id="notes-count">0</strong><small>Your ideas in one place</small></article>
-        <article class="stat-card stat-green"><div class="stat-top"><span class="stat-icon">✓</span><span class="stat-label">TASKS COMPLETED</span></div><strong id="tasks-count">0/0</strong><small id="tasks-caption">Keep up the momentum</small></article>
-        <article class="stat-card stat-orange"><div class="stat-top"><span class="stat-icon">◷</span><span class="stat-label">LOCAL TIME</span></div><strong id="time-stat">--:--</strong><small id="date-stat">Today</small></article>
+        <article class="stat-card stat-purple"><div class="stat-top"><span class="stat-icon">▤</span><span class="stat-label">TOTAL NOTES</span></div><strong id="notes-count">0</strong><small>Your ideas in one place</small><span class="stat-glow"></span></article>
+        <article class="stat-card stat-green"><div class="stat-top"><span class="stat-icon">✓</span><span class="stat-label">TASKS COMPLETED</span></div><strong id="tasks-count">0/0</strong><small id="tasks-caption">Keep up the momentum</small><span class="stat-glow"></span></article>
+        <article class="stat-card stat-orange"><div class="stat-top"><span class="stat-icon">◷</span><span class="stat-label">LOCAL TIME</span></div><strong id="time-stat">--:--</strong><small id="date-stat">Today</small><span class="stat-glow"></span></article>
       </section>
 
       <div class="content-grid">
         <section class="panel notes-panel" id="notes-section">
-          <div class="panel-heading"><div><span class="panel-icon purple-icon">▤</span><div><h2>Quick Notes</h2><p>Capture a thought before it goes.</p></div></div><span class="count-pill" id="notes-pill">0 notes</span></div>
+          <div class="panel-heading"><div class="panel-title-wrap"><span class="panel-icon purple-icon">▤</span><div><h2>Quick Notes</h2><p>Capture a thought before it goes.</p></div></div><span class="count-pill" id="notes-pill">0 notes</span></div>
           <form id="note-form" class="stack-form">
             <label for="note-title">Note title</label><input id="note-title" maxlength="70" placeholder="e.g. Project ideas" required>
             <label for="note-body">Your note</label><textarea id="note-body" rows="3" maxlength="1000" placeholder="Write something worth remembering..." required></textarea>
@@ -76,7 +90,7 @@
         </section>
 
         <section class="panel tasks-panel" id="tasks-section">
-          <div class="panel-heading"><div><span class="panel-icon green-icon">✓</span><div><h2>To-do List</h2><p>One task at a time.</p></div></div><span class="count-pill" id="pending-pill">0 left</span></div>
+          <div class="panel-heading"><div class="panel-title-wrap"><span class="panel-icon green-icon">✓</span><div><h2>To-do List</h2><p>One task at a time.</p></div></div><span class="count-pill" id="pending-pill">0 left</span></div>
           <form id="task-form" class="inline-form"><input id="task-input" maxlength="120" placeholder="Add a new task..." aria-label="New task" required><button class="primary-button" type="submit">Add</button></form>
           <div class="progress-line"><span id="progress-fill"></span></div><div class="progress-label"><span>Progress</span><strong id="progress-text">0%</strong></div>
           <div id="tasks-list" class="tasks-list"><div class="empty-state">Add a task to get started.</div></div>
@@ -84,7 +98,7 @@
         </section>
 
         <section class="panel calculator-panel" id="calculator-section">
-          <div class="panel-heading"><div><span class="panel-icon blue-icon">⌗</span><div><h2>Calculator</h2><p>Quick everyday calculations.</p></div></div></div>
+          <div class="panel-heading"><div class="panel-title-wrap"><span class="panel-icon blue-icon">⌗</span><div><h2>Calculator</h2><p>Quick everyday calculations.</p></div></div></div>
           <div class="calculator">
             <div class="calc-display"><small id="calc-expression">Ready</small><output id="calc-output" aria-live="polite">0</output></div>
             <div class="calc-keys">
@@ -99,6 +113,7 @@
 
         <section class="panel tip-panel">
           <div class="tip-symbol">✦</div><div><span class="eyebrow">A LITTLE REMINDER</span><h2>Progress over perfection.</h2><p>Make a small plan, take the next step, and give yourself credit for showing up.</p></div>
+          <div class="tip-decoration">✧</div>
         </section>
       </div>
       <footer class="footer"><span>© <span id="year"></span> Hamza's Personal Dashboard</span><span>Designed for focus <span class="heart">♥</span></span></footer>
@@ -108,4 +123,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-<!-- GitHub Pages refresh -->
