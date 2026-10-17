@@ -1,0 +1,151 @@
+
+/* Modern Personal Dashboard Upgrade */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2ff, #f8faff);
+    color: #20243a;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sidebar {
+    background: linear-gradient(180deg, #211b4b, #4935a8);
+    color: white;
+    border-radius: 0 24px 24px 0;
+    box-shadow: 8px 0 30px rgba(40, 30, 100, 0.12);
+}
+
+.sidebar a,
+.sidebar button {
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+    background: rgba(255, 255, 255, 0.16);
+    transform: translateX(4px);
+}
+
+main,
+.main-content {
+    padding: 28px;
+}
+
+header,
+.topbar,
+.welcome-card {
+    border-radius: 22px;
+}
+
+.welcome-card {
+    background: linear-gradient(120deg, #5946d8, #8875f4);
+    color: white;
+    padding: 30px;
+    box-shadow: 0 15px 35px rgba(89, 70, 216, 0.2);
+}
+
+.card,
+.stat-card,
+.notes-card,
+.todo-card,
+.calculator-card,
+.reminder-card {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(120, 120, 180, 0.12);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 8px 28px rgba(38, 40, 90, 0.06);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover,
+.stat-card:hover,
+.notes-card:hover,
+.todo-card:hover,
+.calculator-card:hover,
+.reminder-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(38, 40, 90, 0.11);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #dfe2f0;
+    border-radius: 12px;
+    background: #fbfbff;
+    color: #20243a;
+    font: inherit;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #7665e8;
+    box-shadow: 0 0 0 3px rgba(118, 101, 232, 0.13);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 12px;
+    padding: 11px 16px;
+    background: linear-gradient(135deg, #6552dc, #8875f4);
+    color: white;
+    font-weight: 600;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.92;
+    transform: translateY(-2px);
+}
+
+.stat-card h2,
+.stat-card .number {
+    color: #6552dc;
+    font-size: 28px;
+    font-weight: 750;
+}
+
+h1,
+h2,
+h3 {
+    letter-spacing: -0.4px;
+}
+
+footer {
+    color: #777b96;
+    text-align: center;
+    padding: 24px 10px;
+}
+
+@media (max-width: 768px) {
+    main,
+    .main-content {
+        padding: 16px;
+    }
+
+    .welcome-card {
+        padding: 22px;
+    }
+
+    .card,
+    .stat-card,
+    .notes-card,
+    .todo-card,
+    .calculator-card,
+    .reminder-card {
+        padding: 16px;
+        border-radius: 16px;
+    }
+}
